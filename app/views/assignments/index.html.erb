@@ -1,31 +1,28 @@
-<h1>Listing assignments</h1>
+<h1>Listing Assignments</h1>
 
 <table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Open</th>
-      <th>Close</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
 
-  <tbody>
     <% @assignments.each do |assignment| %>
-      <tr>
-        <td><%= assignment.title %></td>
-        <td><%= assignment.description %></td>
-        <td><%= assignment.open %></td>
-        <td><%= assignment.close %></td>
-        <td><%= link_to 'Show', assignment %></td>
-        <td><%= link_to 'Edit', edit_assignment_path(assignment) %></td>
-        <td><%= link_to 'Destroy', assignment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+        <td class="list_description">
+			<dl>
+				<dt><%= link_to assignment.title, assignment %></dt>
+				<dd><%= assignment.description %></dd>
+			</dl>
+		</td>
+        <td class = "list_dates">
+			<dt>Open - Close Dates:</dt>
+			<dates>
+				<%= assignment.open %> - <%= assignment.close %>
+			</dates>
+		</td>
+        <td class="list_actions">
+			<%= link_to 'Edit', edit_assignment_path(assignment) %><br>
+			<%= link_to 'Delete', assignment, method: :delete, data: { confirm: 'Are you sure?' } %><br>
+		</td>
       </tr>
     <% end %>
-  </tbody>
+
 </table>
 
 <br>

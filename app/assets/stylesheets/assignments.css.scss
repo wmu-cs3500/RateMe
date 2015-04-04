@@ -1,3 +1,64 @@
 // Place all the styles related to the Assignments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.assignments {
+	table {
+		border-collapse: collapse;
+	}
+	table tr td {
+		padding: 5px;
+		vertical-align: top;
+	}
+	.list_description {
+		width: 75%;
+	
+		dl {
+			margin: 0;
+		}
+		dt {
+			font-weight: bold;
+			font-size: larger;
+		}
+		a {
+			color: #1A0C0D;
+		}
+		a:hover { background-color: white; }
+		dd {
+			margin: 0;
+		}
+	}
+	.list_dates {
+		vertical-align:top;
+		dt {
+			text-decoration: underline;
+			Font-weight: bold;
+			font-size: medium;
+			color: #1A0C0D;
+		}
+		dates {
+			font-style: italic;
+		}
+	}
+	.list_actions {
+		font-size: x-small;
+		font-weight: bold;
+		text-align: right;
+		padding-left: 3em;
+		
+		a {
+			color: #1A0C0D;
+			
+			
+		}
+		a:hover { background-color: white; }
+	}
+	.list_line_even {
+		background: #A84B56;
+	}
+	.list_line_odd {
+		background: #CC8C94;
+	}
+	
+}
